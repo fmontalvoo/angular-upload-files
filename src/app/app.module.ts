@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 
+import { ImageCropperModule } from 'ngx-image-cropper';
+
 import { environment } from '../environments/environment.dev';
 
 @NgModule({
@@ -16,6 +18,7 @@ import { environment } from '../environments/environment.dev';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ImageCropperModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireStorageModule
   ],

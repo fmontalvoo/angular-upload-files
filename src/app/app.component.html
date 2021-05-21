@@ -1,0 +1,23 @@
+<div>
+    <form>
+        <input type="file" (change)="loadFile($event)">
+        <br />
+        <br />
+        <input type="button" (click)="uploadFile()" value="Subir" />
+    </form>
+</div>
+<br />
+<br />
+<div>
+    <form>
+        <input type="file" (change)="fileChangeEvent($event)" />
+
+        <image-cropper [imageChangedEvent]="imageChangedEvent" [maintainAspectRatio]="true" [aspectRatio]="4 / 3"
+            format="png" (imageCropped)="imageCropped($event)"></image-cropper>
+
+        <img [src]="croppedImage" />
+        <br />
+        <br />
+        <input type="button" (click)="uploadImage()" value="Subir" />
+    </form>
+</div>
