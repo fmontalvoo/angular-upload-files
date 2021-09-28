@@ -1,7 +1,8 @@
 <div>
     <form>
-        <input type="file" (change)="loadFile($event)">
+        <input type="file" accept="image/png, image/jpeg" (change)="loadFile($event)">
         <br />
+        <img [src]="img" width="500" />
         <br />
         <input type="button" (click)="uploadFile()" value="Subir" />
     </form>

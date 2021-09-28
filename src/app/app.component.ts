@@ -14,6 +14,8 @@ export class AppComponent {
   imageChangedEvent: any = '';
   croppedImage: any = '';
 
+  public img: string = '';
+
   constructor(private storage: StorageService) {
 
   }
@@ -21,6 +23,12 @@ export class AppComponent {
   public loadFile(event: any) {
     this.file = <File>event.target.files[0];
     console.log(this.file);
+    let reader = new FileReader();
+    reader.readAsDataURL(this.file);
+    reader.onload = (_event) => {
+      if (typeof reader.result == 'string')
+        this.img = reader.result;
+    }
   }
 
   public uploadFile() {
